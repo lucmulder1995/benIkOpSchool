@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Location</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+
+</head>
+<body ng-app="location" ng-controller="main">
+
+<ion-pane>
+    <ion-header-bar class="bar-dark">
+        <h1 class="title">Location</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div ng-show="onSchool()">
+            Je bent op school :)
+        </div>
+        <div ng-hide="onSchool()">
+            Je bent niet op school :(
+        </div>
+
+        <div ng-show="atHome()">
+            Je bent thuis :)
+        </div>
+        <div ng-hide="atHome()">
+            Je bent niet thuis :(
+        </div>
+
+        {{lat}}
+        <br>
+        {{long}}
+    </ion-content>
+</ion-pane>
+</body>
+</html>
