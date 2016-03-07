@@ -25,6 +25,7 @@ app.controller('main', function ($scope, $ionicModal, localStorageService, $cord
         null,
         function(err) {
             // error
+            alert(err);
         },
         function(position) {
             $scope.lat  = position.coords.latitude
